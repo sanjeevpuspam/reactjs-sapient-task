@@ -72,10 +72,10 @@ aside h3.title{
   margin: 20px 40px;
 }
 
-article h3{
+h3.devlink{
   margin-bottom: 0px;
 }
-article h3 a{
+h3.devlink a{
   color: #8a8686;
   font-size: 14px;
   text-decoration: none;

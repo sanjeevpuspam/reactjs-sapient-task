@@ -77,7 +77,7 @@ function App() {
     <div className="App">
     <h2>Lanch Programs</h2>
     <aside>
-    <h3 className="title">Launch Year</h3>
+    <h3 className="title">Spacex Launch Year</h3>
         <div className="filter" onChange={setFilterData}>
           {
             launchYear.map((y,idx)=>{
