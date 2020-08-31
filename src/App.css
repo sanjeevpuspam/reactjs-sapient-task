@@ -1,0 +1,138 @@
+
+body{
+  background-color: #f2f2f2;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: normal;
+  color: gray;
+}
+
+.App {
+  background-color: #fff;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1em 0;
+  text-align: left;
+  display: block;
+  overflow-x: auto;
+}
+h2 { padding-left: 10px;}
+article { float: left; background-color: #e2e2e2; min-height: 100px; width: 80%; padding: 0;}
+
+article .col {
+  background-color: white;
+  display: inline-block;
+  vertical-align: top;
+  margin: 1%;
+  width: 21%;
+  padding: 1%;
+}
+
+article .col .img-block{
+  background-color: #e2e2e2;
+  overflow: hidden;
+  text-align: center;
+}
+
+.img-block img{
+  max-width: 220px;
+  height: auto;
+}
+
+article .col .details{
+  background-color: #ffffff;
+}
+
+article .col .details p.title{
+  color: #354276;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: verdana;
+}
+
+aside {
+  float: left;
+  min-width: 19%;
+  max-width: 19%;
+  margin-right: 1%;
+  text-align: center;
+}
+
+aside .filter{
+    padding-bottom: 30px;
+    clear: both;
+}
+
+aside h3.title{
+  text-align: center;
+  clear: both;
+  border-bottom: 1px solid #e2e2e2;
+  font-family: serif;
+  margin: 20px 40px;
+}
+
+article h3{
+  margin-bottom: 0px;
+}
+article h3 a{
+  color: #8a8686;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.radio-toolbar {
+  width: 40%;
+  float: left;
+  margin: 5px 5%;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color:  #c5e09b;
+    padding: 3px 15px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.radio-toolbar label:hover {
+  background-color: #7aba01;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+   background-color: #7aba01;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: #7aba01;
+    color: wheat;
+}
+
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .App { max-width: 1000px;}
+  article .col {margin: 1%; width: 21%; padding: 1%;}
+  .img-block img{ max-width: 180px;}
+}
+
+@media (min-width: 701px) and (max-width: 1024px) {
+  .App {max-width: 700px;}
+  article {width: 500px;}
+  aside { max-width: 180px;}
+  article .col { margin: 1%; width: 46%; padding: 1%;}
+  .img-block img{max-width: 120px;}
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .App {max-width: 300px;}
+  article{margin-top: 20px ;}
+  article,aside {width: 100%;    min-width: 100%;}
+  .col{ width: 96% !important;}
+}
