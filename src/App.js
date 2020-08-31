@@ -75,7 +75,7 @@ function App() {
 
   return (
     <div className="App">
-    <h2>Lanch Programs</h2>
+    <h2>SpaceX launch Programs</h2>
     <aside>
     <h3 className="title">Spacex Launch Year</h3>
         <div className="filter" onChange={setFilterData}>
