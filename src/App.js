@@ -1,12 +1,13 @@
 import React, {useState, useEffect } from 'react';
 import './App.css';
+import Article from './Components/Article';
+import DeveloperProfile from './Components/DeveloperProfile';
 
 function App() {
-
+  
   const [data,setData]     = useState([]);
   const [launchYear]       = useState([2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006]);
   const [isSuccess]        = useState(["True","False"]);
-  const [developer]    = useState({name:"Sanjeev Puspam",link:"https://www.linkedin.com/in/sanjeevpuspam"});
   
   const [launch,setLaunch]    = useState('');
   const [landing,setLanding]  = useState('');
@@ -29,8 +30,6 @@ function App() {
         console.log(`Error in Exception => ${err.message}`);
     }
   }
-
-
   const setFilterData = (event) =>{
       let apiBaseUrl  = "https://api.spacexdata.com/v3/launches?limit=100";
       let val = (event.target.value).toLowerCase();
@@ -76,7 +75,7 @@ function App() {
 
   return (
     <div className="App">
-    <h2>SpaceX lanch Programs</h2>
+    <h2>Lanch Programs</h2>
     <aside>
     <h3 className="title">Launch Year</h3>
         <div className="filter" onChange={setFilterData}>
@@ -113,29 +112,14 @@ function App() {
         </div>
     </aside>
     <article>
-      <div className="contents">
-        { data.length > 0 ? data.map((item,idx) => (
-          <div className="col" key={idx}>
-                <div className="img-block">
-                  <img src={item.links.mission_patch_small} alt={item.mission_name} />
-                </div>
-                <div className="details">
-                  <p className="title"> { item.mission_name } #{item.flight_number } </p>
-                  <p><strong>Mission Ids</strong> : { item.mission_id.join(',') }</p>
-                  <p><strong>Launch Year</strong> : { item.launch_year }</p>
-                  <p><strong>Successful Launch</strong> : { (item.launch_success) ? "true": "false" }</p>
-                  <p><strong>Successful Landing</strong> : { item.rocket.first_stage.cores.map((d,x)=>(
-                          <span key={x}>{  (d.land_success!==null) ? (d.land_success) ? "true" : "false" : "null" }</span>
-                  ))}</p>
-                </div>
-            </div>
-            )) : <div className="col" key="0"><div className="img-block">
+        { data.length > 0 ? data.map((item,idx) => ( 
+          <Article item={item} key={idx} /> 
+          )) : <div className="col" key="0"><div className="img-block">
                   <img src="https://i.pinimg.com/originals/a2/dc/96/a2dc9668f2cf170fe3efeb263128b0e7.gif" alt="Not found" />
               </div><div className="details"></div></div>
       }
-      </div>
-      <h3 style={{ textAlign:'center', backgroundColor:'#ffffff'}}> <a href={developer.link} target="_blank" title={developer.name}>{ '{'+developer.name+'}' }</a></h3>
     </article>
+      <DeveloperProfile />
     </div>
   );
 }
