@@ -1,7 +1,5 @@
 # Sapient-Task
 
-
-
-Live url : [https://sanjeevpuspam.github.io/reactjs-sapient-task]
-
-![alt OutPut Screen](https://github.com/sanjeevpuspam/Reactjs-Sapient-Task/blob/master/public/screen.PNG)
+<a href="https://sanjeevpuspam.github.io/reactjs-sapient-task/" target="_blank">
+    <img src="https://github.com/sanjeevpuspam/Reactjs-Sapient-Task/blob/master/public/screen.PNG" alt="reactjs-sapient-task" />
+</a>
